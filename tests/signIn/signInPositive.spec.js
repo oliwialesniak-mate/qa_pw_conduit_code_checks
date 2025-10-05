@@ -1,8 +1,8 @@
-import { test } from "@playwright/test";
-import { SignInPage } from "../../src/pages/SignInPage";
-import { HomePage } from "../../src/pages/HomePage";
+import { test } from '@playwright/test';
+import { SignInPage } from '../../src/pages/SignInPage';
+import { HomePage } from '../../src/pages/HomePage';
 
-test.describe("Sign in positive tests", () => {
+test.describe('Sign in positive tests', () => {
   let signInPage;
   let homePage;
   let user;
@@ -12,12 +12,12 @@ test.describe("Sign in positive tests", () => {
     homePage = new HomePage(page);
 
     user = {
-      email: "test_new_user@gmail.com",
-      password: "newpass123!",
+      email: 'test_new_user@gmail.com',
+      password: 'newpass123!',
     };
   });
 
-  test("Successful `Sign in` flow test", async ({ page }) => {
+  test('Successful `Sign in` flow test', async () => {
     await signInPage.open();
     await signInPage.fillEmailField(user.email);
     await signInPage.fillPasswordField(user.password);

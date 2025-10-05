@@ -1,17 +1,17 @@
-import { expect } from "@playwright/test";
+import { expect } from '@playwright/test';
 
 export class SignUpPage {
   constructor(page) {
     this.page = page;
-    this.usernameField = page.getByPlaceholder("Username");
-    this.emailField = page.getByPlaceholder("Email");
-    this.passwordField = page.getByPlaceholder("Password");
-    this.signUpButton = page.getByRole("button", { name: "Sign up" });
-    this.errorMessage = page.getByRole("list").nth(1);
+    this.usernameField = page.getByPlaceholder('Username');
+    this.emailField = page.getByPlaceholder('Email');
+    this.passwordField = page.getByPlaceholder('Password');
+    this.signUpButton = page.getByRole('button', { name: 'Sign up' });
+    this.errorMessage = page.getByRole('list').nth(1);
   }
 
   async open() {
-    await this.page.goto("/user/register");
+    await this.page.goto('/user/register');
   }
 
   async fillUsernameField(username) {

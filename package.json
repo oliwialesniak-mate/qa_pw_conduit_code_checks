@@ -1,17 +1,27 @@
 {
-  "name": "qa_pw_intro",
+  "name": "qa_pw_conduit_code_checks",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "@faker-js/faker": "^9",
-    "playwright-core": "^1"
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "npx prettier --write .",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@playwright/test": "^1"
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.34.0",
+    "globals": "^15.0.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.2.0",
+    "typescript-eslint": "^8.0.0"
   },
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"]
+  }
 }

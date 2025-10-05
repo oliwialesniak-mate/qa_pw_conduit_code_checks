@@ -1,7 +1,7 @@
-import { test } from "@playwright/test";
-import { SignUpPage } from "../../src/pages/SignUpPage";
+import { test } from '@playwright/test';
+import { SignUpPage } from '../../src/pages/SignUpPage';
 
-test.describe("Sign up negative tests", () => {
+test.describe('Sign up negative tests', () => {
   let signUpPage;
 
   test.beforeEach(async ({ page }) => {
@@ -9,9 +9,9 @@ test.describe("Sign up negative tests", () => {
     await signUpPage.open();
   });
 
-  test("Assert error message for empty username in Sign up form", async () => {
-    await signUpPage.fillEmailField("test@gmail.com");
-    await signUpPage.fillPasswordField("newpass123!");
+  test('Assert error message for empty username in Sign up form', async () => {
+    await signUpPage.fillEmailField('test@gmail.com');
+    await signUpPage.fillPasswordField('newpass123!');
     await signUpPage.clickSignUpButton();
 
     await signUpPage.assertErrorMessageContainsText(
@@ -19,9 +19,9 @@ test.describe("Sign up negative tests", () => {
     );
   });
 
-  test("Assert error message for empty email in Sign up form", async () => {
-    await signUpPage.fillUsernameField("newuser");
-    await signUpPage.fillPasswordField("newpass123!");
+  test('Assert error message for empty email in Sign up form', async () => {
+    await signUpPage.fillUsernameField('newuser');
+    await signUpPage.fillPasswordField('newpass123!');
     await signUpPage.clickSignUpButton();
 
     await signUpPage.assertErrorMessageContainsText(
@@ -29,9 +29,9 @@ test.describe("Sign up negative tests", () => {
     );
   });
 
-  test("Assert error message for empty password in Sign up form", async () => {
-    await signUpPage.fillUsernameField("newuser");
-    await signUpPage.fillEmailField("test@gmail.com");
+  test('Assert error message for empty password in Sign up form', async () => {
+    await signUpPage.fillUsernameField('newuser');
+    await signUpPage.fillEmailField('test@gmail.com');
     await signUpPage.clickSignUpButton();
 
     await signUpPage.assertErrorMessageContainsText(`password:can't be blank`);
